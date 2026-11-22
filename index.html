@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cox Honor Code Assistant</title>
+  <meta name="description" content="Plain-language answers about the SMU Cox Graduate Programs Honor Code, drawn from the official text.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="index.html">
+        <svg width="26" height="30" viewBox="0 0 26 30" aria-hidden="true"><path d="M13 1.5 2 5.5v8.2c0 7 4.7 12.3 11 14.8 6.3-2.5 11-7.8 11-14.8V5.5L13 1.5Z" fill="none" stroke="#B8913A" stroke-width="2"/><path d="m8 15 3.6 3.6L18.5 11" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Honor Code Assistant</span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html" aria-current="page" class="nav-hide">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="#check" class="nav-hide">Is this allowed?</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Introduction">
+      <video autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <source src="hero.mp4" type="video/mp4">
+      </video>
+      <div class="wrap">
+        <h1>Know the Honor Code before you need it.</h1>
+        <p>Ask about the Cox Graduate Programs Honor Code and get a plain-language answer drawn from the official text, any time of day.</p>
+        <div class="actions">
+          <a class="btn btn-brass" href="https://share.chatling.ai/s/ye2Ph4w5qtuTBTa" target="_blank" rel="noopener">Ask the assistant</a>
+          <a class="btn btn-ghost" href="how-it-works.html">See how it works</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="statement" aria-labelledby="statement-h">
+      <div class="wrap grid">
+        <figure style="margin:0">
+          <h2 id="statement-h" class="visually-hidden" style="position:absolute;left:-9999px">The honor statement</h2>
+          <blockquote>
+            <p>“A Cox School of Business student will not lie, cheat, steal, or tolerate those who do.”</p>
+          </blockquote>
+          <figcaption>Section 2 of the Cox Graduate Programs Honor Code</figcaption>
+        </figure>
+        <div class="aside">
+          <p>That one sentence covers a lot of ground. Is last year’s exam fair game? Does rewording a source count as plagiarism? Do you have to report a classmate?</p>
+          <p>Most integrity problems start with confusion, not bad intent. The assistant answers those questions before they turn into cases.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="asks" aria-labelledby="asks-h">
+      <div class="wrap">
+        <h2 id="asks-h">Start with a common question, or ask your own.</h2>
+        <ul class="ask-list">
+          <li><span>You</span>What counts as a violation?</li>
+          <li><span>Assistant</span>Cheating, plagiarism, stealing, lying, and tolerating a violation you know about. Section 4 lists each one, and your professor’s syllabus sets what resources are allowed.</li>
+          <li><span>You</span>If I know a classmate cheated, do I have to report it?</li>
+          <li><span>Assistant</span>Yes. Failing to report a known or suspected violation is itself a violation under the Code.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="check" id="check" aria-labelledby="check-h">
+      <div class="wrap">
+        <h2 id="check-h">Is this allowed?</h2>
+        <p class="intro">Five situations Cox students actually run into. Make your call, then see what the Honor Code says.</p>
+
+        <div class="scenario" id="scenario" aria-live="polite">
+          <div class="progress"><span id="step-label">Scenario 1 of 5</span><span id="score-label">Score: 0</span></div>
+          <p class="prompt" id="prompt"></p>
+          <div class="choices" id="choices"></div>
+          <div class="verdict" id="verdict" hidden>
+            <p id="verdict-text"></p>
+            <p class="ref" id="verdict-ref"></p>
+            <button class="btn btn-ink" id="next-btn" type="button">Next scenario</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <h3>About the “Is this allowed?” check</h3>
+          <p id="xfactor">An interactive self-check of five realistic scenarios. Pick allowed, not allowed, or ask your professor, and it reveals the right call with the Honor Code section behind it, so students can test their judgment before it counts.</p>
+        </div>
+        <div>
+          <h3>Learn more</h3>
+          <p><a href="how-it-works.html">How the assistant works</a><br>
+          <a href="https://www.smu.edu/cox/business-school-community/students/graduate-students/honor-code" target="_blank" rel="noopener">Read the full Honor Code</a></p>
+        </div>
+      </div>
+      <p class="fine">A student project by Diego Preciado for ITOM 6216 at SMU Cox. Not an official SMU resource. For a specific situation, contact the Cox Honor Council or your professor.</p>
+    </div>
+  </footer>
+
+  <script>
+    const scenarios = [
+      {
+        prompt: "A second-year shares last year’s final exam for your course. You want to use it to study.",
+        answer: "Ask your professor",
+        why: "Using prior exams or class materials is prohibited unless the professor authorizes it. Ask first.",
+        ref: "Sections 4B and 4D.1 (Cheating)"
+      },
+      {
+        prompt: "You reword a paragraph from an industry report in your paper and don’t cite it, since the words are now your own.",
+        answer: "Not allowed",
+        why: "Rewording someone else’s ideas without citing the source is plagiarism, even if it was unintentional.",
+        ref: "Section 4D.2 (Plagiarism)"
+      },
+      {
+        prompt: "During an exam you see a teammate copying answers. You decide it’s not your business.",
+        answer: "Not allowed",
+        why: "Failing to report a known or suspected violation is itself a violation.",
+        ref: "Section 4D.5 (Tolerating)"
+      },
+      {
+        prompt: "The syllabus says you may discuss homework problems with classmates. You work through a problem set as a group.",
+        answer: "Allowed",
+        why: "Professors define the permitted resources and collaboration for their course. If the syllabus allows it, you’re fine.",
+        ref: "Section 4B"
+      },
+      {
+        prompt: "Work was brutal this week, so you turn in a paper you wrote for a different class.",
+        answer: "Not allowed",
+        why: "Submitting work from another course without permission is cheating, and work or family pressure is not a defense.",
+        ref: "Sections 4D.1 and 4E"
+      }
+    ];
+    const options = ["Allowed", "Not allowed", "Ask your professor"];
+
+    let i = 0, score = 0;
+    const $ = id => document.getElementById(id);
+
+    function render() {
+      const s = scenarios[i];
+      $("step-label").textContent = `Scenario ${i + 1} of ${scenarios.length}`;
+      $("score-label").textContent = `Score: ${score}`;
+      $("prompt").textContent = s.prompt;
+      $("verdict").hidden = true;
+      const box = $("choices");
+      box.innerHTML = "";
+      options.forEach(opt => {
+        const b = document.createElement("button");
+        b.type = "button"; b.className = "choice"; b.textContent = opt;
+        b.addEventListener("click", () => choose(opt));
+        box.appendChild(b);
+      });
+    }
+
+    function choose(opt) {
+      const s = scenarios[i];
+      const right = opt === s.answer;
+      if (right) score++;
+      [...$("choices").children].forEach(b => {
+        b.disabled = true;
+        if (b.textContent === s.answer) b.classList.add("correct");
+        else if (b.textContent === opt) b.classList.add("wrong");
+      });
+      $("verdict-text").innerHTML = `<strong>${right ? "Right call." : "Not quite. The answer is “" + s.answer + ".”"}</strong> ${s.why}`;
+      $("verdict-ref").textContent = s.ref;
+      $("score-label").textContent = `Score: ${score}`;
+      $("next-btn").textContent = i === scenarios.length - 1 ? "See your score" : "Next scenario";
+      $("verdict").hidden = false;
+      $("next-btn").focus();
+    }
+
+    function finish() {
+      const msg = score === 5 ? "You know the Code well." :
+                  score >= 3 ? "Solid, with a few gray areas worth asking about." :
+                  "Worth a closer look. The assistant can walk you through it.";
+      $("scenario").innerHTML = `
+        <div class="progress"><span>All done</span></div>
+        <p class="result-score">${score} / ${scenarios.length}</p>
+        <p>${msg}</p>
+        <div class="choices">
+          <button class="btn btn-ink" type="button" id="restart">Try again</button>
+          <a class="btn btn-brass" href="https://share.chatling.ai/s/ye2Ph4w5qtuTBTa" target="_blank" rel="noopener">Ask the assistant</a>
+        </div>`;
+      document.getElementById("restart").addEventListener("click", start);
+    }
+
+    const shell = $("scenario").innerHTML;
+    function start() {
+      i = 0; score = 0;
+      $("scenario").innerHTML = shell;
+      $("next-btn").addEventListener("click", () => {
+        if (i < scenarios.length - 1) { i++; render(); } else { finish(); }
+      });
+      render();
+    }
+    start();
+
+    // Keep the hero video playing on browsers that pause autoplay until it loads
+    const v = document.querySelector(".hero video");
+    if (v) { v.muted = true; v.play().catch(() => {}); }
+  </script>
+
+  <!-- Chatling chatbot widget (Cox Honor Code Assistant) -->
+  <script> window.chtlConfig = { chatbotId: "7797889587" } </script>
+  <script async data-id="7797889587" id="chtl-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+</body>
+</html>

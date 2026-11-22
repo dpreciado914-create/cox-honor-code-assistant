@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How it works | Cox Honor Code Assistant</title>
+  <meta name="description" content="How the Cox Honor Code Assistant answers questions, what it will and won't do, and how it was built.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header solid">
+    <div class="wrap">
+      <a class="wordmark" href="index.html">
+        <svg width="26" height="30" viewBox="0 0 26 30" aria-hidden="true"><path d="M13 1.5 2 5.5v8.2c0 7 4.7 12.3 11 14.8 6.3-2.5 11-7.8 11-14.8V5.5L13 1.5Z" fill="none" stroke="#B8913A" stroke-width="2"/><path d="m8 15 3.6 3.6L18.5 11" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Honor Code Assistant</span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html" class="nav-hide">Home</a>
+        <a href="how-it-works.html" aria-current="page">How it works</a>
+        <a href="index.html#check" class="nav-hide">Is this allowed?</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <h1>A faster first stop for Honor Code questions.</h1>
+        <p>The Cox Graduate Programs Honor Code is a long document, and most students only open it when something has already gone wrong. This assistant puts the answers one question away.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap two-col">
+        <div>
+          <h2>Why I built it</h2>
+        </div>
+        <div>
+          <p>I serve on the Cox Graduate Honor Council. Many of the integrity questions that come up are not about students trying to cheat. They come from students who were not sure where the line was: whether a past exam was allowed, how much rewording still needs a citation, or whether they had to say something about a classmate.</p>
+          <p>Those are questions with clear answers in the Code, but few people read all fourteen sections before the semester starts. A chatbot that answers in plain language, at midnight before a deadline, catches that confusion early. It also lets the Council spend its time on real cases instead of avoidable ones.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>What happens when you ask a question</h2>
+        <ol class="steps">
+          <li>
+            <div>
+              <h3>Pick a topic or type your own question</h3>
+              <p>The chat opens with three common topics: violations, reporting a concern, and hearings. You can also choose “Ask my own question” and type anything.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>The assistant searches the official Honor Code</h3>
+              <p>Its only knowledge source is the published Cox Graduate Programs Honor Code page, so answers come from the actual rules rather than the open internet.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>You get a short answer with the section it came from</h3>
+              <p>Responses stay under about 150 words and name the relevant section, so you can read the full text if you want the details.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>If the Code doesn’t cover it, you’re pointed to a person</h3>
+              <p>When there is no answer in the Code, the assistant says so and refers you to the Cox Honor Council or your professor. Then it asks if you have another question.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap two-col">
+        <div>
+          <h2>What it will do</h2>
+          <ul class="does">
+            <li>Explain what each type of violation means in plain language</li>
+            <li>Walk through how a case moves from a report to a hearing</li>
+            <li>Describe the range of possible sanctions and how appeals work</li>
+            <li>Remind you that each professor’s syllabus sets the rules for resources, group work, and AI tools</li>
+          </ul>
+        </div>
+        <div>
+          <h2>What it won’t do</h2>
+          <ul class="doesnt">
+            <li>Decide whether a specific student is responsible for a violation</li>
+            <li>Give legal advice or act as your advisor in a hearing</li>
+            <li>Guess at a policy, deadline, or sanction the Code doesn’t state</li>
+            <li>Replace a conversation with your professor or the Honor Council</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>The Honor Code at a glance</h2>
+        <p>A quick map of the parts students ask about most. The assistant can go deeper on any of them.</p>
+        <div class="glance">
+          <div>
+            <h3>Violations (Section 4)</h3>
+            <p>Cheating, plagiarism, stealing, lying, tolerating a violation, making false allegations, and refusing to cooperate with an investigation. Not having read the Code is not a defense.</p>
+          </div>
+          <div>
+            <h3>Reporting</h3>
+            <p>Students who know of or suspect a violation are expected to report it in writing to the Honor Council chairs or the Associate Dean for Masters Programs.</p>
+          </div>
+          <div>
+            <h3>Hearings (Sections 8–10)</h3>
+            <p>Two investigators gather evidence, and a seven-member hearing board decides. A finding of responsibility needs clear and convincing evidence and five of seven votes.</p>
+          </div>
+          <div>
+            <h3>Sanctions and appeals (Sections 6 and 12)</h3>
+            <p>Outcomes range from an admonition or a lower grade to suspension or expulsion. Appeals require new evidence or a procedural error and are due within ten class days.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>How it was built</h2>
+        <div class="built">
+          <div>
+            <h3>Chatbot</h3>
+            <p>Built in Chatling with a flow of topic buttons, an AI response step, and a fallback path.</p>
+          </div>
+          <div>
+            <h3>Knowledge and rules</h3>
+            <p>One knowledge source (the official Honor Code page) and five written instructions that keep answers grounded.</p>
+          </div>
+          <div>
+            <h3>Website</h3>
+            <p>HTML and CSS written with an AI model, hosted on GitHub Pages.</p>
+          </div>
+          <div>
+            <h3>Video</h3>
+            <p>The landing-page clip was generated with Google Gemini.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap">
+        <p>Have a question about the Code right now?</p>
+        <div class="actions" style="display:flex;gap:.75rem;flex-wrap:wrap">
+          <a class="btn btn-brass" href="https://share.chatling.ai/s/ye2Ph4w5qtuTBTa" target="_blank" rel="noopener">Ask the assistant</a>
+          <a class="btn btn-ink" href="index.html">Back to home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="fine" style="margin-top:0;border-top:0;padding-top:0">A student project by Diego Preciado for ITOM 6216 at SMU Cox. Not an official SMU resource. For a specific situation, contact the Cox Honor Council or your professor.</p>
+    </div>
+  </footer>
+
+  <!-- Chatling chatbot widget (Cox Honor Code Assistant) -->
+  <script> window.chtlConfig = { chatbotId: "7797889587" } </script>
+  <script async data-id="7797889587" id="chtl-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+</body>
+</html>
